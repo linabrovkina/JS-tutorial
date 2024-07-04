@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Projects</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .subscribe-button {
+            border: none;
+            background-color: black;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .is-subscribed {
+            background-color: rgb(240, 240, 240);
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <p>YouTube Subscribe Button</p>
-    <button onclick="subscribe()" class="js-subscribe-button">Subscribe</button>
+    <button onclick="subscribe()" class="js-subscribe-button subscribe-button">Subscribe</button>
 
 
     <p>Amazon Shipping Calculator</p>
@@ -22,7 +46,7 @@
     <script>
         String()
 
-        window
+        window.document
 
         function handleCostKeydown(event) {
             if(event.key === 'Enter') {
@@ -46,8 +70,10 @@
 
             if (buttonElement.innerText === 'Subscribe') {
                 buttonElement.innerHTML = 'Subscribed';
+                buttonElement.classList.add('is-subscribed');
             } else {
                 buttonElement.innerHTML = 'Subscribe';
+                buttonElement.classList.remove('is-subscribed');
             }
         }
     </script>
